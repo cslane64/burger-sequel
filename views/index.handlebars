@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 text-center" id="top-bar">
+      <h1>EAT da BURGER</h1>
+    </div>
+    <div class="col-xs-6 text-center" class="task">
+      <!--<div class="row">-->
+      {{#each burgers}}
+      {{#unless this.devoured}}
+      <div class="col-xs-6 text-center">
+        <h3>
+          <pre>{{this.id}}. {{this.burger_name}}</pre>
+        </h3>
+      </div>
+      <div class="col-xs-3 text-center">
+        <button class="change-devour" data-id="{{id}}" data-eaten="{{devoured}}">
+          {{#if devoured}}YUMMM{{else}}DEVOUR!{{/if}}
+        </button>
+      </div>
+      {{/unless}}
+      {{/each}}
+      <!--</div>-->
+      <div class="picture">
+        <img id="burger-image" src="/assets/images/Bacon-Cheesy-1.jpg" alt="Your Burger">
+      </div>
+
+      <div class="col-xs-6 text-center" class="task">
+        <h2>You have devoured these burgers!!!</h2>
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <input class="form-control" type="text" placeholder="{{this.burger_name}}" readonly>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Add da BURGER</h2>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="burger_name" name="name">
+  </div>
+  <br>
+  <br>
+
+  <!--<div class="form-group">
+    <label for="sleepy">Sleepy?</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+    <input type="radio" name="sleepy" value="0"> Awake
+  </div>-->
+
+  <button type="submit" class="addBurgerButton">Add da Burger</button>
+
+</form>
+
+<!--<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center enter_section">
+      <form action=
+    </div>
+  </div>
+</div>-->
